@@ -12,7 +12,7 @@ const SignUp = () => {
 
   const changeEventHandler = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
-    console.log(input)
+    // console.log(input)
 }
 
 const signupHandler = async (e) => {
@@ -23,7 +23,7 @@ const signupHandler = async (e) => {
 }
   try {
       setLoading(true);
-      const res = await axios.post('http://localhost:5000/api/v1/auth/signin', input, {
+      const res = await axios.post('https://zerodha-clone-ziwg.onrender.com/api/v1/auth/signin', input, {
           headers: {
               'Content-Type': 'application/json'
           },
@@ -31,9 +31,9 @@ const signupHandler = async (e) => {
       });
       console.log(res);
       if (res.status === 200) {
-        console.log("User Logged successfully");
+        // console.log("User Logged successfully");
         navigate("/special");
-        console.log("Response data:", res.data); // Show detailed response if needed
+        // console.log("Response data:", res.data); // Show detailed response if needed
     }
 
 

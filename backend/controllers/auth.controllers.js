@@ -20,7 +20,7 @@ export const signup = async (req, res) => {
     try {
         const existingUser = await User.findOne({ mobile });
         if (existingUser) {
-            console.log(existingUser)
+            // console.log(existingUser)
             return res.status(400).json({ error: "Mobile number already in use" });
         }
 

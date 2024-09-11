@@ -23,7 +23,7 @@ const signupHandler = async (e) => {
 }
   try {
       setLoading(true);
-      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/signup`, input, {
+      const res = await axios.post(`https://zerodha-clone-ziwg.onrender.com/auth/signup`, input, {
           headers: {
               'Content-Type': 'application/json'
           },
@@ -32,7 +32,7 @@ const signupHandler = async (e) => {
       console.log(res);
       if (res.status === 201) {
         console.log("User signed up successfully");
-        console.log("Response data:", res.data); // Show detailed response if needed
+        // console.log("Response data:", res.data); // Show detailed response if needed
         navigate("/signin");
     }
 
